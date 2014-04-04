@@ -16,6 +16,7 @@ class GroupTest extends \PHPUnit_Framework_TestCase
      * @var Group
      */
     protected $group;
+    define("LABEL", "Label");
 
     protected function setUp()
     {
@@ -26,16 +27,16 @@ class GroupTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertNull($this->group->getLabel());
 
-        $group = new Group('Label');
-        $this->assertEquals('Label', $group->getLabel());
+        $group = new Group(LABEL);
+        $this->assertEquals(LABEL, $group->getLabel());
     }
 
     public function testLabel()
     {
         $this->assertNull($this->group->getLabel());
-        $this->group->setLabel('Label');
-        $this->assertEquals('Label', $this->group->getLabel());
-        $this->assertEquals('Label', $this->group->__toString());
+        $this->group->setLabel(LABEL);
+        $this->assertEquals(LABEL, $this->group->getLabel());
+        $this->assertEquals(LABEL, $this->group->__toString());
     }
 
     public function testOwners()
